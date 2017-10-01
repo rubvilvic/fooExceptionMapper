@@ -11,8 +11,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Provider
 public class GenericExceptionMapper implements ExceptionMapper<Throwable>{
 
-	private final static ObjectMapper MAPPER = new ObjectMapper();
-	
 	@Override
 	public Response toResponse(Throwable exception) {
 		ErrorResponse errorResponse = new ErrorResponse(exception.getMessage(), "UNKNOWN");
